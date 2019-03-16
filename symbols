@@ -4,6 +4,7 @@ libQt5Location.so.5:Qt_5.1
 libQt5Location.so.5:Qt_5.10
 libQt5Location.so.5:Qt_5.11
 libQt5Location.so.5:Qt_5.12
+libQt5Location.so.5:Qt_5.12.2_PRIVATE_API
 libQt5Location.so.5:Qt_5.2
 libQt5Location.so.5:Qt_5.3
 libQt5Location.so.5:Qt_5.4
@@ -12,7 +13,6 @@ libQt5Location.so.5:Qt_5.6
 libQt5Location.so.5:Qt_5.7
 libQt5Location.so.5:Qt_5.8
 libQt5Location.so.5:Qt_5.9
-libQt5Location.so.5:Qt_5_PRIVATE_API
 libQt5Location.so.5:_Z11parseCircleRK8QJSValuePb
 libQt5Location.so.5:_Z14parseRectangleRK8QJSValuePb
 libQt5Location.so.5:_Z15parseCoordinateRK8QJSValuePb
@@ -3665,6 +3665,7 @@ libQt5Positioning.so.5:Qt_5.1
 libQt5Positioning.so.5:Qt_5.10
 libQt5Positioning.so.5:Qt_5.11
 libQt5Positioning.so.5:Qt_5.12
+libQt5Positioning.so.5:Qt_5.12.2_PRIVATE_API
 libQt5Positioning.so.5:Qt_5.2
 libQt5Positioning.so.5:Qt_5.3
 libQt5Positioning.so.5:Qt_5.4
@@ -3673,7 +3674,6 @@ libQt5Positioning.so.5:Qt_5.6
 libQt5Positioning.so.5:Qt_5.7
 libQt5Positioning.so.5:Qt_5.8
 libQt5Positioning.so.5:Qt_5.9
-libQt5Positioning.so.5:Qt_5_PRIVATE_API
 libQt5Positioning.so.5:_Z24qt_registerLocationTypesv
 libQt5Positioning.so.5:_Z5qHashRK14QGeoCoordinatej
 libQt5Positioning.so.5:_ZN10QGeoCircle12extendCircleERK14QGeoCoordinate
@@ -4223,6 +4223,7 @@ libQt5PositioningQuick.so.5:Qt_5.1
 libQt5PositioningQuick.so.5:Qt_5.10
 libQt5PositioningQuick.so.5:Qt_5.11
 libQt5PositioningQuick.so.5:Qt_5.12
+libQt5PositioningQuick.so.5:Qt_5.12.2_PRIVATE_API
 libQt5PositioningQuick.so.5:Qt_5.2
 libQt5PositioningQuick.so.5:Qt_5.3
 libQt5PositioningQuick.so.5:Qt_5.4
@@ -4231,7 +4232,6 @@ libQt5PositioningQuick.so.5:Qt_5.6
 libQt5PositioningQuick.so.5:Qt_5.7
 libQt5PositioningQuick.so.5:Qt_5.8
 libQt5PositioningQuick.so.5:Qt_5.9
-libQt5PositioningQuick.so.5:Qt_5_PRIVATE_API
 libQt5PositioningQuick.so.5:_Z24q_coordinateInterpolatorRK14QGeoCoordinateS1_d
 libQt5PositioningQuick.so.5:_ZN20QDeclarativePosition10coordinateEv
 libQt5PositioningQuick.so.5:_ZN20QDeclarativePosition11qt_metacallEN11QMetaObject4CallEiPPv
