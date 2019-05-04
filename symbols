@@ -4,7 +4,7 @@ libQt5Location.so.5:Qt_5.1
 libQt5Location.so.5:Qt_5.10
 libQt5Location.so.5:Qt_5.11
 libQt5Location.so.5:Qt_5.12
-libQt5Location.so.5:Qt_5.12.2_PRIVATE_API
+libQt5Location.so.5:Qt_5.12.3_PRIVATE_API
 libQt5Location.so.5:Qt_5.2
 libQt5Location.so.5:Qt_5.3
 libQt5Location.so.5:Qt_5.4
@@ -1898,6 +1898,7 @@ libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView12modelChangedEv
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView12modelUpdatedERK13QQmlChangeSetb
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView14destroyingItemEP7QObject
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView15delegateChangedEv
+libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView15disposeDelegateEP10QQuickItem
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView16addDelegateToMapEP10QQuickItemib
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView16addItemViewToMapEPS_ib
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView17addItemGroupToMapEP27QDeclarativeGeoMapItemGroupib
@@ -1912,6 +1913,7 @@ libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView22autoFitViewportChangedEv
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView22exitTransitionFinishedEv
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView22insertInstantiatedItemEiP10QQuickItemb
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView23removeInstantiatedItemsEb
+libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView23terminateExitTransitionEP10QQuickItem
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView24incubateDelegatesChangedEv
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView6setMapEP18QDeclarativeGeoMap
 libQt5Location.so.5:_ZN26QDeclarativeGeoMapItemView8initItemEiP7QObject
@@ -3665,7 +3667,7 @@ libQt5Positioning.so.5:Qt_5.1
 libQt5Positioning.so.5:Qt_5.10
 libQt5Positioning.so.5:Qt_5.11
 libQt5Positioning.so.5:Qt_5.12
-libQt5Positioning.so.5:Qt_5.12.2_PRIVATE_API
+libQt5Positioning.so.5:Qt_5.12.3_PRIVATE_API
 libQt5Positioning.so.5:Qt_5.2
 libQt5Positioning.so.5:Qt_5.3
 libQt5Positioning.so.5:Qt_5.4
@@ -4223,7 +4225,7 @@ libQt5PositioningQuick.so.5:Qt_5.1
 libQt5PositioningQuick.so.5:Qt_5.10
 libQt5PositioningQuick.so.5:Qt_5.11
 libQt5PositioningQuick.so.5:Qt_5.12
-libQt5PositioningQuick.so.5:Qt_5.12.2_PRIVATE_API
+libQt5PositioningQuick.so.5:Qt_5.12.3_PRIVATE_API
 libQt5PositioningQuick.so.5:Qt_5.2
 libQt5PositioningQuick.so.5:Qt_5.3
 libQt5PositioningQuick.so.5:Qt_5.4
