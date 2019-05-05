@@ -1,5 +1,5 @@
-Qt 5.12.3 is a bug-fix release. It maintains both forward and backward
-compatibility (source and binary) with Qt 5.12.0 through 5.12.2.
+Qt 5.12.2 is a bug-fix release. It maintains both forward and backward
+compatibility (source and binary) with Qt 5.12.0 through 5.12.1.
 
 For more details, refer to the online documentation included in this
 distribution. The documentation is also available online:
@@ -18,16 +18,16 @@ Each of these identifiers can be entered in the bug tracker to obtain more
 information about a particular change.
 
 ****************************************************************************
+*                                QtLocation                                *
+****************************************************************************
+
+ - [QTBUG-61509] Fixed crash when assigning a Component to MapQuickItem.sourceItem.
+ - [QTBUG-72935] Fixed QGeoRectangle::operator|=-.
+ - [QTBUG-71264] Fixed MapObjectView removing wrong indices on model changes.
+
+****************************************************************************
 *                              QtPositioning                               *
 ****************************************************************************
 
- - Documented QGeoPath::length behavior properly.
-
-****************************************************************************
-*                               UNSPECIFIED                                *
-****************************************************************************
-
- -  Fixed incorrect indexing of Mapbox tiles in the cache.
- -  Fixed crash when destroying Maps containing MapItemViews.
- -  Added a notice to the MapViewer example to inform when a HTTPS-based map
-    is selected without SSL support.
+ - Several improvements in the WinRT positioning plugin.
+ - Geoclue plugin re-enabled on all *BSD.
