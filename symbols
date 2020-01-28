@@ -6,7 +6,7 @@ libQt5Location.so.5:Qt_5.11
 libQt5Location.so.5:Qt_5.12
 libQt5Location.so.5:Qt_5.13
 libQt5Location.so.5:Qt_5.14
-libQt5Location.so.5:Qt_5.14.0_PRIVATE_API
+libQt5Location.so.5:Qt_5.14.1_PRIVATE_API
 libQt5Location.so.5:Qt_5.2
 libQt5Location.so.5:Qt_5.3
 libQt5Location.so.5:Qt_5.4
@@ -3765,7 +3765,7 @@ libQt5Positioning.so.5:Qt_5.11
 libQt5Positioning.so.5:Qt_5.12
 libQt5Positioning.so.5:Qt_5.13
 libQt5Positioning.so.5:Qt_5.14
-libQt5Positioning.so.5:Qt_5.14.0_PRIVATE_API
+libQt5Positioning.so.5:Qt_5.14.1_PRIVATE_API
 libQt5Positioning.so.5:Qt_5.2
 libQt5Positioning.so.5:Qt_5.3
 libQt5Positioning.so.5:Qt_5.4
@@ -4408,7 +4408,7 @@ libQt5PositioningQuick.so.5:Qt_5.11
 libQt5PositioningQuick.so.5:Qt_5.12
 libQt5PositioningQuick.so.5:Qt_5.13
 libQt5PositioningQuick.so.5:Qt_5.14
-libQt5PositioningQuick.so.5:Qt_5.14.0_PRIVATE_API
+libQt5PositioningQuick.so.5:Qt_5.14.1_PRIVATE_API
 libQt5PositioningQuick.so.5:Qt_5.2
 libQt5PositioningQuick.so.5:Qt_5.3
 libQt5PositioningQuick.so.5:Qt_5.4
