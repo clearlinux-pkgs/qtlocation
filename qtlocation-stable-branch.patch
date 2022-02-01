@@ -1,0 +1,166 @@
+Antti Kokko (1):
+      Add changes file for Qt 5.15.2
+
+Edward Welbourne (1):
+      Use QLocale::NorwegianBokmal rather than Norwegian
+
+Jani Heikkinen (1):
+      Bump version
+
+Piotr Mikolajczyk (2):
+      Fix crash when showing Map QML comp. for 2nd+ time
+      Simpler fix to crashing Qml Map appearing 2nd+ time
+
+Vyacheslav Koscheev (1):
+      Android: fix Location properties
+
+diff --git a/src/location/labs/qsg/qgeomapobjectqsgsupport.cpp b/src/location/labs/qsg/qgeomapobjectqsgsupport.cpp
+index 0e1df8f6..a978573d 100644
+--- a/src/location/labs/qsg/qgeomapobjectqsgsupport.cpp
++++ b/src/location/labs/qsg/qgeomapobjectqsgsupport.cpp
+@@ -157,9 +157,14 @@ void QGeoMapObjectQSGSupport::updateMapObjects(QSGNode *root, QQuickWindow *wind
+ {
+     if (!root)
+         return;
++
++    if (m_mapObjectsRootNode && m_mapObjectsRootNode->parent())
++        root->appendChildNode(m_mapObjectsRootNode.get());
++
+     if (!m_mapObjectsRootNode) {
+-        m_mapObjectsRootNode = new QDeclarativePolygonMapItemPrivateOpenGL::RootNode();
+-        root->appendChildNode(m_mapObjectsRootNode);
++        m_mapObjectsRootNode = std::make_unique<QDeclarativePolygonMapItemPrivateOpenGL::RootNode>();
++        root->appendChildNode(m_mapObjectsRootNode.get());
++        m_mapObjectsRootNode->setFlag(QSGNode::OwnedByParent, false);
+     }
+ 
+     m_mapObjectsRootNode->removeAllChildNodes();
+@@ -184,7 +189,7 @@ void QGeoMapObjectQSGSupport::updateMapObjects(QSGNode *root, QQuickWindow *wind
+         MapObject &mo = m_mapObjects[i];
+         QQSGMapObject *sgo = mo.sgObject;
+         QSGNode *oldNode = mo.qsgNode;
+-        mo.qsgNode = sgo->updateMapObjectNode(oldNode, &mo.visibleNode, m_mapObjectsRootNode, window);
++        mo.qsgNode = sgo->updateMapObjectNode(oldNode, &mo.visibleNode, m_mapObjectsRootNode.get(), window);
+         if (Q_UNLIKELY(!mo.qsgNode)) {
+             qWarning() << "updateMapObjectNode for "<<mo.object->type() << " returned NULL";
+         } else if (mo.visibleNode && (mo.visibleNode->visible() != mo.object->visible())) {
+@@ -200,7 +205,7 @@ void QGeoMapObjectQSGSupport::updateMapObjects(QSGNode *root, QQuickWindow *wind
+         QQSGMapObject *sgo = mo.sgObject;
+         QSGNode *oldNode = mo.qsgNode;
+         sgo->updateGeometry(); // or subtree will be blocked
+-        mo.qsgNode = sgo->updateMapObjectNode(oldNode, &mo.visibleNode, m_mapObjectsRootNode, window);
++        mo.qsgNode = sgo->updateMapObjectNode(oldNode, &mo.visibleNode, m_mapObjectsRootNode.get(), window);
+         if (mo.qsgNode) {
+             if (mo.visibleNode && (mo.visibleNode->visible() != mo.object->visible())) {
+                 mo.visibleNode->setVisible(mo.object->visible());
+diff --git a/src/location/labs/qsg/qgeomapobjectqsgsupport_p.h b/src/location/labs/qsg/qgeomapobjectqsgsupport_p.h
+index 1ec966fa..cbbc0969 100644
+--- a/src/location/labs/qsg/qgeomapobjectqsgsupport_p.h
++++ b/src/location/labs/qsg/qgeomapobjectqsgsupport_p.h
+@@ -59,6 +59,7 @@
+ #include <QtLocation/private/qdeclarativepolylinemapitem_p.h>
+ #include <QtLocation/private/qdeclarativepolygonmapitem_p_p.h>
+ #include <QtCore/qpointer.h>
++#include <memory>
+ 
+ QT_BEGIN_NAMESPACE
+ struct Q_LOCATION_PRIVATE_EXPORT MapObject {
+@@ -85,7 +86,7 @@ public:
+     QList<MapObject> m_pendingMapObjects;
+     QList<MapObject> m_removedMapObjects;
+     QGeoMap *m_map = nullptr;
+-    QDeclarativePolygonMapItemPrivateOpenGL::RootNode *m_mapObjectsRootNode = nullptr;
++    std::unique_ptr<QDeclarativePolygonMapItemPrivateOpenGL::RootNode> m_mapObjectsRootNode;
+ };
+ 
+ QT_END_NAMESPACE
+diff --git a/src/plugins/position/android/src/jnipositioning.cpp b/src/plugins/position/android/src/jnipositioning.cpp
+index 05b25d98..a9fe6ae7 100644
+--- a/src/plugins/position/android/src/jnipositioning.cpp
++++ b/src/plugins/position/android/src/jnipositioning.cpp
+@@ -223,7 +223,10 @@ namespace AndroidPositioning {
+         if (attributeExists) {
+             mid = getCachedMethodID(jniEnv, thisClass, "getAltitude", "()D");
+             jdouble value = jniEnv->CallDoubleMethod(location, mid);
+-            coordinate.setAltitude(value);
++            if (value != 0.0)
++            {
++                coordinate.setAltitude(value);
++            }
+         }
+ 
+         info.setCoordinate(coordinate);
+@@ -239,7 +242,10 @@ namespace AndroidPositioning {
+         if (attributeExists) {
+             mid = getCachedMethodID(jniEnv, thisClass, "getAccuracy", "()F");
+             jfloat accuracy = jniEnv->CallFloatMethod(location, mid);
+-            info.setAttribute(QGeoPositionInfo::HorizontalAccuracy, qreal(accuracy));
++            if (accuracy != 0.0)
++            {
++                info.setAttribute(QGeoPositionInfo::HorizontalAccuracy, qreal(accuracy));
++            }
+         }
+ 
+         //vertical accuracy
+@@ -250,7 +256,10 @@ namespace AndroidPositioning {
+                 mid = getCachedMethodID(jniEnv, thisClass, "getVerticalAccuracyMeters", "()F");
+                 if (mid) {
+                     jfloat accuracy = jniEnv->CallFloatMethod(location, mid);
+-                    info.setAttribute(QGeoPositionInfo::VerticalAccuracy, qreal(accuracy));
++                    if (accuracy != 0.0)
++                    {
++                        info.setAttribute(QGeoPositionInfo::VerticalAccuracy, qreal(accuracy));
++                    }
+                 }
+             }
+         }
+@@ -264,7 +273,10 @@ namespace AndroidPositioning {
+         if (attributeExists) {
+             mid = getCachedMethodID(jniEnv, thisClass, "getSpeed", "()F");
+             jfloat speed = jniEnv->CallFloatMethod(location, mid);
+-            info.setAttribute(QGeoPositionInfo::GroundSpeed, qreal(speed));
++            if (speed != 0)
++            {
++                info.setAttribute(QGeoPositionInfo::GroundSpeed, qreal(speed));
++            }
+         }
+ 
+         //bearing
+@@ -273,7 +285,10 @@ namespace AndroidPositioning {
+         if (attributeExists) {
+             mid = getCachedMethodID(jniEnv, thisClass, "getBearing", "()F");
+             jfloat bearing = jniEnv->CallFloatMethod(location, mid);
+-            info.setAttribute(QGeoPositionInfo::Direction, qreal(bearing));
++            if (bearing != 0.0)
++            {
++                info.setAttribute(QGeoPositionInfo::Direction, qreal(bearing));
++            }
+         }
+ 
+         jniEnv->DeleteLocalRef(thisClass);
+diff --git a/tests/auto/qplacemanager/tst_qplacemanager.cpp b/tests/auto/qplacemanager/tst_qplacemanager.cpp
+index 2cb035cd..919be2d9 100644
+--- a/tests/auto/qplacemanager/tst_qplacemanager.cpp
++++ b/tests/auto/qplacemanager/tst_qplacemanager.cpp
+@@ -108,7 +108,7 @@ void tst_QPlaceManager::testLocales()
+     QCOMPARE(placeManager->locales().count(), 1);
+     QCOMPARE(placeManager->locales().at(0), QLocale());
+ 
+-    QLocale locale(QLocale::Norwegian, QLocale::Norway);
++    QLocale locale(QLocale::NorwegianBokmal, QLocale::Norway);
+     placeManager->setLocale(locale);
+ 
+     QCOMPARE(placeManager->locales().at(0), locale);
+diff --git a/tests/auto/qplacemanager_unsupported/tst_qplacemanager_unsupported.cpp b/tests/auto/qplacemanager_unsupported/tst_qplacemanager_unsupported.cpp
+index 98a9dd31..58300904 100644
+--- a/tests/auto/qplacemanager_unsupported/tst_qplacemanager_unsupported.cpp
++++ b/tests/auto/qplacemanager_unsupported/tst_qplacemanager_unsupported.cpp
+@@ -120,7 +120,7 @@ void tst_QPlaceManagerUnsupported::testLocales()
+ {
+     QVERIFY(m_manager->locales().isEmpty());
+ 
+-    QLocale locale(QLocale::Norwegian, QLocale::Norway);
++    QLocale locale(QLocale::NorwegianBokmal, QLocale::Norway);
+     m_manager->setLocale(locale);
+ 
+     QVERIFY(m_manager->locales().isEmpty());
