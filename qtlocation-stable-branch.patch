@@ -1,5 +1,6 @@
-Antonio Rojas (1):
+Antonio Rojas (2):
       Fix build of Qt.labs.location QML plugin
+      Fix appendChildNode() call
 
 Antti Kokko (1):
       Add changes file for Qt 5.15.2
@@ -464,7 +465,7 @@ index 65d2f618..f7ecd2a8 100644
  QT_END_NAMESPACE
  
 diff --git a/src/location/labs/qsg/qgeomapobjectqsgsupport.cpp b/src/location/labs/qsg/qgeomapobjectqsgsupport.cpp
-index 0e1df8f6..a978573d 100644
+index 0e1df8f6..11e1466f 100644
 --- a/src/location/labs/qsg/qgeomapobjectqsgsupport.cpp
 +++ b/src/location/labs/qsg/qgeomapobjectqsgsupport.cpp
 @@ -157,9 +157,14 @@ void QGeoMapObjectQSGSupport::updateMapObjects(QSGNode *root, QQuickWindow *wind
@@ -472,7 +473,7 @@ index 0e1df8f6..a978573d 100644
      if (!root)
          return;
 +
-+    if (m_mapObjectsRootNode && m_mapObjectsRootNode->parent())
++    if (m_mapObjectsRootNode && !m_mapObjectsRootNode->parent())
 +        root->appendChildNode(m_mapObjectsRootNode.get());
 +
      if (!m_mapObjectsRootNode) {
