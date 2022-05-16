@@ -8,7 +8,8 @@ Antti Kokko (1):
 Edward Welbourne (1):
       Use QLocale::NorwegianBokmal rather than Norwegian
 
-Jani Heikkinen (1):
+Jani Heikkinen (2):
+      Bump version
       Bump version
 
 Michal Klocek (2):
@@ -22,9 +23,10 @@ Piotr Mikolajczyk (2):
 Tadej Novak (1):
       Allow removal of layers and sources created using parameters in MapboxGL
 
-Tarja Sundqvist (2):
+Tarja Sundqvist (3):
       Update commercial license headers
       Revert "Update commercial license headers"
+      Merge remote-tracking branch 'origin/tqtc/lts-5.15.4' into tqtc/lts-5.15-opensource
 
 Vyacheslav Koscheev (1):
       Android: fix Location properties
