@@ -4,7 +4,7 @@
 #
 Name     : qtlocation
 Version  : 5.15.2
-Release  : 32
+Release  : 33
 URL      : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtlocation-everywhere-src-5.15.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtlocation-everywhere-src-5.15.2.tar.xz
 Summary  : No detailed summary available
@@ -89,43 +89,43 @@ test -r config.log && cat config.log
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1655664662
+export SOURCE_DATE_EPOCH=1662656471
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qtlocation
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/LICENSE.FDL %{buildroot}/usr/share/package-licenses/qtlocation/61907422fefcd2313a9b570c31d203a6dbebd333
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/LICENSE.GPL2 %{buildroot}/usr/share/package-licenses/qtlocation/4cc77b90af91e615a64ae04893fdffa7939db84c
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/LICENSE.GPL3 %{buildroot}/usr/share/package-licenses/qtlocation/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/LICENSE.GPL3-EXCEPT %{buildroot}/usr/share/package-licenses/qtlocation/e93757aefa405f2c9a8a55e780ae9c39542dfc3a
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/LICENSE.GPLv3 %{buildroot}/usr/share/package-licenses/qtlocation/7d974f34cf5fd474f0fdf6ebc8d410ea5c8b72de
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/LICENSE.LGPL3 %{buildroot}/usr/share/package-licenses/qtlocation/f45ee1c765646813b442ca58de72e20a64a7ddba
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/LICENSE.LGPLv3 %{buildroot}/usr/share/package-licenses/qtlocation/d8b489a3c3d500a6601181e3db39bec6124b86fc
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/examples/location/geojson_viewer/data/10-countries_LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/6aa54cc12e002b5197172fe3796fb0ddd09ebc7c
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/clip2tri/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/69d5aab915ac11e2d4afbdbf664824e654b7ae93
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/clipper/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/23b6196e1135fe02b4deb0607b016ff725275c79
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/earcut/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/1c92a2b8d0646e9c5e8696397c40b1407b46fddf
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/geosimplify.js/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/785f3a96f457e8c61836e9e7474da58f436f5d4b
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/LICENSE_Boost.txt %{buildroot}/usr/share/package-licenses/qtlocation/3cba29011be2b9d59f6204d6fa0a386b1b2dbd90
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/LICENSE_CSSColorParser.txt %{buildroot}/usr/share/package-licenses/qtlocation/02238373f10f9382e6cdddf30faf33e76e744d69
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/LICENSE_geojson.txt %{buildroot}/usr/share/package-licenses/qtlocation/25c0e2ad5263cedb0cfd7e6aebc2ee2c55735d5d
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/LICENSE_geojson_vt_cpp.txt %{buildroot}/usr/share/package-licenses/qtlocation/1c92a2b8d0646e9c5e8696397c40b1407b46fddf
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/LICENSE_geometry.txt %{buildroot}/usr/share/package-licenses/qtlocation/644a9caba03cab9194094c168962c125e7d6b8dc
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/LICENSE_mapbox.txt %{buildroot}/usr/share/package-licenses/qtlocation/8323ff61db1dc707441fac218eea486c98adc6a0
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/LICENSE_parsedate.txt %{buildroot}/usr/share/package-licenses/qtlocation/c8d07e0ad7a7f15cd39d78b32163815abf40b4cb
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/LICENSE_protozero.txt %{buildroot}/usr/share/package-licenses/qtlocation/c90134f68ba9b55008f8dc3dd3100e2e632d55bf
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/LICENSE_rapidjson.txt %{buildroot}/usr/share/package-licenses/qtlocation/07fff7c953947bc443eb7c3aeb90c39eef70d529
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/LICENSE_vectortile.txt %{buildroot}/usr/share/package-licenses/qtlocation/644a9caba03cab9194094c168962c125e7d6b8dc
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/LICENSE_wagyu.txt %{buildroot}/usr/share/package-licenses/qtlocation/c05a49e69e7f82969c8a07d0c18621c6b69ef76b
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/deps/earcut/0.12.4/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/1c92a2b8d0646e9c5e8696397c40b1407b46fddf
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/deps/kdbush/0.1.1-1/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/2402d654960118ffda4e8cd9db4d05531f5ceaae
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/deps/polylabel/1.0.3/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/3a267029cb82d0e9c3188d47cdcbc3e8d939e7e2
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/deps/shelf-pack/2.1.1/LICENSE.md %{buildroot}/usr/share/package-licenses/qtlocation/385f23556b74e358767dc3349fbe58201f95a634
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/deps/supercluster/0.2.2/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/644a9caba03cab9194094c168962c125e7d6b8dc
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/deps/tao_tuple/28626e99/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/42a688ebbcdf9cb6db783ade7cdfa2f922ab9715
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/deps/variant/1.1.4/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/ae3dbcee04c86fbc589fcf2547d4aaaeb41db3c2
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/mapbox-gl-native/vendor/nunicode/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/ea1ed91b37e5c99835b9ebf0861f96dfda2524cd
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/3rdparty/poly2tri/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/3c4a0cf53278b001dd25ca8dea8d543fc0374181
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/src/plugins/geoservices/mapbox/maki-4.0.0/LICENSE.txt %{buildroot}/usr/share/package-licenses/qtlocation/34b2b37ec594d86bd391137b4fb644eccb17bdbb
-cp %{_builddir}/qtlocation-everywhere-src-5.15.2/tests/auto/qgeojson/10-countries_LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/6aa54cc12e002b5197172fe3796fb0ddd09ebc7c
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/LICENSE.FDL %{buildroot}/usr/share/package-licenses/qtlocation/61907422fefcd2313a9b570c31d203a6dbebd333 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/LICENSE.GPL2 %{buildroot}/usr/share/package-licenses/qtlocation/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/LICENSE.GPL3 %{buildroot}/usr/share/package-licenses/qtlocation/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/LICENSE.GPL3-EXCEPT %{buildroot}/usr/share/package-licenses/qtlocation/e93757aefa405f2c9a8a55e780ae9c39542dfc3a || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/LICENSE.GPLv3 %{buildroot}/usr/share/package-licenses/qtlocation/7d974f34cf5fd474f0fdf6ebc8d410ea5c8b72de || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/LICENSE.LGPL3 %{buildroot}/usr/share/package-licenses/qtlocation/f45ee1c765646813b442ca58de72e20a64a7ddba || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/LICENSE.LGPLv3 %{buildroot}/usr/share/package-licenses/qtlocation/d8b489a3c3d500a6601181e3db39bec6124b86fc || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/examples/location/geojson_viewer/data/10-countries_LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/6aa54cc12e002b5197172fe3796fb0ddd09ebc7c || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/clip2tri/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/69d5aab915ac11e2d4afbdbf664824e654b7ae93 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/clipper/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/23b6196e1135fe02b4deb0607b016ff725275c79 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/earcut/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/1c92a2b8d0646e9c5e8696397c40b1407b46fddf || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/geosimplify.js/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/785f3a96f457e8c61836e9e7474da58f436f5d4b || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/LICENSE_Boost.txt %{buildroot}/usr/share/package-licenses/qtlocation/3cba29011be2b9d59f6204d6fa0a386b1b2dbd90 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/LICENSE_CSSColorParser.txt %{buildroot}/usr/share/package-licenses/qtlocation/02238373f10f9382e6cdddf30faf33e76e744d69 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/LICENSE_geojson.txt %{buildroot}/usr/share/package-licenses/qtlocation/25c0e2ad5263cedb0cfd7e6aebc2ee2c55735d5d || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/LICENSE_geojson_vt_cpp.txt %{buildroot}/usr/share/package-licenses/qtlocation/1c92a2b8d0646e9c5e8696397c40b1407b46fddf || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/LICENSE_geometry.txt %{buildroot}/usr/share/package-licenses/qtlocation/644a9caba03cab9194094c168962c125e7d6b8dc || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/LICENSE_mapbox.txt %{buildroot}/usr/share/package-licenses/qtlocation/8323ff61db1dc707441fac218eea486c98adc6a0 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/LICENSE_parsedate.txt %{buildroot}/usr/share/package-licenses/qtlocation/c8d07e0ad7a7f15cd39d78b32163815abf40b4cb || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/LICENSE_protozero.txt %{buildroot}/usr/share/package-licenses/qtlocation/c90134f68ba9b55008f8dc3dd3100e2e632d55bf || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/LICENSE_rapidjson.txt %{buildroot}/usr/share/package-licenses/qtlocation/07fff7c953947bc443eb7c3aeb90c39eef70d529 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/LICENSE_vectortile.txt %{buildroot}/usr/share/package-licenses/qtlocation/644a9caba03cab9194094c168962c125e7d6b8dc || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/LICENSE_wagyu.txt %{buildroot}/usr/share/package-licenses/qtlocation/c05a49e69e7f82969c8a07d0c18621c6b69ef76b || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/deps/earcut/0.12.4/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/1c92a2b8d0646e9c5e8696397c40b1407b46fddf || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/deps/kdbush/0.1.1-1/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/2402d654960118ffda4e8cd9db4d05531f5ceaae || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/deps/polylabel/1.0.3/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/3a267029cb82d0e9c3188d47cdcbc3e8d939e7e2 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/deps/shelf-pack/2.1.1/LICENSE.md %{buildroot}/usr/share/package-licenses/qtlocation/385f23556b74e358767dc3349fbe58201f95a634 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/deps/supercluster/0.2.2/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/644a9caba03cab9194094c168962c125e7d6b8dc || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/deps/tao_tuple/28626e99/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/42a688ebbcdf9cb6db783ade7cdfa2f922ab9715 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/deps/variant/1.1.4/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/ae3dbcee04c86fbc589fcf2547d4aaaeb41db3c2 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/mapbox-gl-native/vendor/nunicode/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/ea1ed91b37e5c99835b9ebf0861f96dfda2524cd || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/3rdparty/poly2tri/LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/3c4a0cf53278b001dd25ca8dea8d543fc0374181 || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/src/plugins/geoservices/mapbox/maki-4.0.0/LICENSE.txt %{buildroot}/usr/share/package-licenses/qtlocation/34b2b37ec594d86bd391137b4fb644eccb17bdbb || :
+cp %{_builddir}/qtlocation-everywhere-src-%{version}/tests/auto/qgeojson/10-countries_LICENSE %{buildroot}/usr/share/package-licenses/qtlocation/6aa54cc12e002b5197172fe3796fb0ddd09ebc7c || :
 %make_install
 
 %files
