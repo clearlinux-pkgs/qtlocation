@@ -2,3 +2,17 @@
 # but are undesirable. One entry per line, no whitespace.
 Qt5Location
 Qt5Positioning
+Qt6Location
+Qt6Positioning
+Qt6Concurrent
+Qt6Core
+Qt6DBus
+Qt6Gui
+Qt6Network
+Qt6Qml
+Qt6Quick
+Qt6SerialPort
+Qt6Sql
+Qt6Test
+Qt6Widgets
+Qt6XmlPatterns

@@ -1,0 +1,77 @@
+From c2c35e7df6ce5d53f67d936ddb4f658da3939c33 Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Fri, 30 May 2025 16:25:17 -0700
+Subject: [PATCH 1/2] ignore winrt
+
+---
+ qtlocation.pro                    |  1 -
+ src/plugins/position/position.pro |  1 -
+ src/positioning/configure.json    | 16 +---------------
+ 3 files changed, 1 insertion(+), 17 deletions(-)
+
+diff --git a/qtlocation.pro b/qtlocation.pro
+index 2577ff2..2aa7793 100644
+--- a/qtlocation.pro
++++ b/qtlocation.pro
+@@ -1,7 +1,6 @@
+ requires(!wasm)
+ load(configure)
+ qtCompileTest(gypsy)
+-qtCompileTest(winrt)
+ 
+ load(qt_parts)
+ 
+diff --git a/src/plugins/position/position.pro b/src/plugins/position/position.pro
+index 412bafe..0599b93 100644
+--- a/src/plugins/position/position.pro
++++ b/src/plugins/position/position.pro
+@@ -5,7 +5,6 @@ QT_FOR_CONFIG += positioning-private
+ linux|freebsd|openbsd|netbsd:qtHaveModule(dbus):SUBDIRS += geoclue
+ linux|freebsd|openbsd|netbsd:qtHaveModule(dbus):SUBDIRS += geoclue2
+ qtConfig(gypsy):SUBDIRS += gypsy
+-qtConfig(winrt_geolocation):SUBDIRS += winrt
+ qtHaveModule(simulator):SUBDIRS += simulator
+ osx|ios|tvos:SUBDIRS += corelocation
+ android:SUBDIRS += android
+diff --git a/src/positioning/configure.json b/src/positioning/configure.json
+index 49e32be..ed71cdf 100644
+--- a/src/positioning/configure.json
++++ b/src/positioning/configure.json
+@@ -12,24 +12,11 @@
+         }
+     },
+ 
+-    "tests": {
+-        "winrt_geolocation": {
+-            "label": "WinRT Geolocation API",
+-            "type": "compile",
+-            "test": "winrt"
+-        }
+-    },
+-
+     "features": {
+         "gypsy": {
+             "label": "Gypsy GPS Daemon",
+             "condition": "libs.gypsy",
+             "output": [ "privateFeature" ]
+-        },
+-        "winrt_geolocation": {
+-            "label": "WinRT Geolocation API",
+-            "condition": "tests.winrt_geolocation",
+-            "output": [ "privateFeature" ]
+         }
+     },
+ 
+@@ -40,8 +27,7 @@
+         {
+             "section": "Qt Positioning",
+             "entries": [
+-                "gypsy",
+-                "winrt_geolocation"
++                "gypsy"
+             ]
+         }
+     ]
+-- 
+2.49.0
+

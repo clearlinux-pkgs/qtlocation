@@ -1,2 +1,2 @@
-qtlocation-stable-branch.patch
-0001-Add-missing-header-includes.patch
+0001-ignore-winrt.patch
+0002-Remove-mapbox.patch

@@ -1,4 +1,4 @@
-5.15.2
-mesa-dev
+5.15.17
 openssl-dev
+pkgconfig(gl)
 pkgconfig(zlib)

@@ -1,3 +1,15 @@
 # This file contains additional pkgconfig build requirements that did
 # not get picked up automatically. One name per line, no whitespace.
 icu-uc
+Qt5Concurrent
+Qt5Core
+Qt5DBus
+Qt5Gui
+Qt5Network
+Qt5Qml
+Qt5Quick
+Qt5SerialPort
+Qt5Sql
+Qt5Test
+Qt5Widgets
+Qt5XmlPatterns
